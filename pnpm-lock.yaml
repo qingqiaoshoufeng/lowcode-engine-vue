@@ -92,7 +92,7 @@ importers:
 
   packages/data-source:
     dependencies:
-      '@knxcloud/lowcode-utils':
+      '@castle/lowcode-utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
@@ -141,13 +141,13 @@ importers:
 
   packages/vue-renderer:
     dependencies:
-      '@knxcloud/lowcode-data-source':
+      '@castle/lowcode-data-source':
         specifier: workspace:*
         version: link:../data-source
-      '@knxcloud/lowcode-hooks':
+      '@castle/lowcode-hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@knxcloud/lowcode-utils':
+      '@castle/lowcode-utils':
         specifier: workspace:*
         version: link:../utils
       intl-messageformat:
@@ -175,13 +175,13 @@ importers:
 
   packages/vue-simulator-renderer:
     dependencies:
-      '@knxcloud/lowcode-hooks':
+      '@castle/lowcode-hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@knxcloud/lowcode-utils':
+      '@castle/lowcode-utils':
         specifier: workspace:*
         version: link:../utils
-      '@knxcloud/lowcode-vue-renderer':
+      '@castle/lowcode-vue-renderer':
         specifier: workspace:*
         version: link:../vue-renderer
     devDependencies:

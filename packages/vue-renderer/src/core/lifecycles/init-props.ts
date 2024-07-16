@@ -4,7 +4,7 @@ import {
   isFunction,
   isObject,
   isString,
-} from '@knxcloud/lowcode-utils';
+} from '@castle/lowcode-utils';
 import { ComponentInternalInstance, Prop, PropType, withCtx } from 'vue';
 import {
   warn,

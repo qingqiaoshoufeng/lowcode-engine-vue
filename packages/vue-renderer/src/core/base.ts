@@ -11,7 +11,7 @@ import type {
   PropType,
 } from 'vue';
 import type { BlockScope, I18nMessages, SchemaParser } from '../utils';
-import { INode } from '@knxcloud/lowcode-hooks';
+import { INode } from '@castle/lowcode-hooks';
 
 export const rendererProps = {
   __scope: {

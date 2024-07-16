@@ -1,4 +1,4 @@
-import { noop } from '@knxcloud/lowcode-utils';
+import { noop } from '@castle/lowcode-utils';
 import { createDataSourceEngine } from '../src';
 
 describe('data source engine', async () => {
@@ -37,7 +37,7 @@ describe('data source engine', async () => {
           Object.assign(state, newState);
         },
         forceUpdate: noop,
-      }
+      },
     );
     const res = await engine.dataSourceMap.info.load();
     expect(res).eq(engine.dataSourceMap.info.data).eq(state.info).eq(1);
@@ -77,10 +77,10 @@ describe('data source engine', async () => {
           Object.assign(state, newState);
         },
         forceUpdate: noop,
-      }
+      },
     );
     expect(() => engine.dataSourceMap.info.load()).rejects.toThrowError(
-      'Server Internal Error'
+      'Server Internal Error',
     );
     expect(engine.dataSourceMap.info.error).toBeUndefined();
   });
@@ -111,7 +111,7 @@ describe('data source engine', async () => {
           Object.assign(state, newState);
         },
         forceUpdate: noop,
-      }
+      },
     );
 
     expect(() => engine.dataSourceMap.info.load()).rejects.toThrowError();
@@ -151,7 +151,7 @@ describe('data source engine', async () => {
           Object.assign(state, newState);
         },
         forceUpdate: noop,
-      }
+      },
     );
     const res = await engine.dataSourceMap.info.load();
     expect(res).eq(1);

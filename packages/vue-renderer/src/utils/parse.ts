@@ -13,7 +13,7 @@ import {
   isJSFunction,
   isPlainObject,
   isString,
-} from '@knxcloud/lowcode-utils';
+} from '@castle/lowcode-utils';
 import { ensureArray } from './array';
 
 export const EXPRESSION_TYPE = {

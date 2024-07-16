@@ -6,7 +6,7 @@ Lowcode Engine Vue 渲染器及适配器实现，点击查看[在线演示](http
 
 ## 如何自定义组件
 
-我们提供了 `npm init @knxcloud/lowcode@latest` 命令用于初始化一个基础的低代码组件项目，该项目基于 `vue-cli` 构建。项目启动后，会生成一个 `/assets.json` 文件，该文件可直接作为低代码物料的导入入口，部分代码示例如下：
+我们提供了 `npm init @castle/lowcode@latest` 命令用于初始化一个基础的低代码组件项目，该项目基于 `vue-cli` 构建。项目启动后，会生成一个 `/assets.json` 文件，该文件可直接作为低代码物料的导入入口，部分代码示例如下：
 
 ```ts
 const editorInit = (ctx: ILowCodePluginContext) => {
@@ -47,7 +47,7 @@ appHelper 暴露给 `this` 的属性都会加上 `$` 前缀，区别于其他属
 
 ## Vue 代码编辑器
 
-现已支持 [Vue 代码编辑器 @knxcloud/lowcode-plugin-vue-code-editor](https://github.com/KNXCloud/lowcode-engine-plugins/tree/main/packages/plugin-vue-code-editor)，支持情况如下
+现已支持 [Vue 代码编辑器 @castle/lowcode-plugin-vue-code-editor](https://github.com/KNXCloud/lowcode-engine-plugins/tree/main/packages/plugin-vue-code-editor)，支持情况如下
 
 - [x] ESModule
   - [x] import (assets 加载的包，可以使用 `import` 语法导入)
@@ -101,7 +101,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import VueRenderer, {
   LOWCODE_ROUTE_META,
   setupLowCodeRouteGuard,
-} from '@knxcloud/lowcode-vue-renderer'
+} from '@castle/lowcode-vue-renderer'
 
 const schema = {} // 低代码设计器导出的页面 schema
 const components = {} // 组件映射关系对象
@@ -137,15 +137,15 @@ export default router;
 
 ```ts
 import { init, project } from '@alilc/lowcode-engine';
-import { setupHostEnvironment } from '@knxcloud/lowcode-utils';
+import { setupHostEnvironment } from '@castle/lowcode-utils';
 
 setupHostEnvironment(project, 'https://unpkg.com/vue@3.2.47/dist/vue.runtime.global.js');
 
 init(document.getElementById('lce'), {
   // ...
   simulatorUrl: [
-    'https://unpkg.com/@knxcloud/lowcode-vue-simulator-renderer/dist/vue-simulator-renderer.js',
-    'https://unpkg.com/@knxcloud/lowcode-vue-simulator-renderer/dist/vue-simulator-renderer.css',
+    'https://unpkg.com/@castle/lowcode-vue-simulator-renderer/dist/vue-simulator-renderer.js',
+    'https://unpkg.com/@castle/lowcode-vue-simulator-renderer/dist/vue-simulator-renderer.css',
   ],
 });
 ```
@@ -167,7 +167,7 @@ pnpm start
 {
   "proxy": [
     [
-      "(?:.*)unpkg.com/@knxcloud/lowcode-vue-simulator-renderer(?:.*)/dist/(.*)",
+      "(?:.*)unpkg.com/@castle/lowcode-vue-simulator-renderer(?:.*)/dist/(.*)",
       "http://localhost:5559/$1"
     ],
   ]

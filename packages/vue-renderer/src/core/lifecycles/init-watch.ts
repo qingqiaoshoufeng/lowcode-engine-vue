@@ -1,4 +1,4 @@
-import { isArray, isFunction, isObject, isString } from '@knxcloud/lowcode-utils';
+import { isArray, isFunction, isObject, isString } from '@castle/lowcode-utils';
 import { warn, watch } from 'vue';
 import {
   AccessTypes,

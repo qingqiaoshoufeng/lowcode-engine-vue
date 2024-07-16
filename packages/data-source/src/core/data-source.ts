@@ -8,7 +8,7 @@ import {
   MaybyFunc,
 } from './interface';
 import { computed, reactive, ref, shallowRef } from 'vue';
-import { isFunction, isPlainObject, isUndefined } from '@knxcloud/lowcode-utils';
+import { isFunction, isPlainObject, isUndefined } from '@castle/lowcode-utils';
 import { fetchRequest } from '../handlers';
 
 export function createDataSource(
@@ -30,7 +30,7 @@ export function createDataSource(
   const {
     willFetch = same,
     shouldFetch = alwaysTrue,
-    dataHandler = (res: unknown) => res && Reflect.get(res, 'data'),
+    dataHandler = (res: unknown) => res,
     errorHandler = alwaysThrow,
   } = config;
 

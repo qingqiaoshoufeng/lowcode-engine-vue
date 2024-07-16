@@ -1,9 +1,9 @@
 {
-  "name": "@knxcloud/lowcode-vue-simulator-renderer",
+  "name": "@castle/lowcode-vue-simulator-renderer",
   "main": "./dist/vue-simulator-renderer.js",
   "module": "./dist/vue-simulator-renderer.mjs",
   "typings": "./dist/vue-simulator-renderer.d.ts",
-  "version": "1.6.1",
+  "version": "1.6.4",
   "keywords": [
     "vue",
     "lowcode",
@@ -19,9 +19,9 @@
     "prepack": "pnpm build"
   },
   "dependencies": {
-    "@knxcloud/lowcode-hooks": "workspace:*",
-    "@knxcloud/lowcode-utils": "workspace:*",
-    "@knxcloud/lowcode-vue-renderer": "workspace:*"
+    "@castle/lowcode-hooks": "workspace:*",
+    "@castle/lowcode-utils": "workspace:*",
+    "@castle/lowcode-vue-renderer": "workspace:*"
   },
   "devDependencies": {
     "@alilc/lowcode-designer": "^1.1.10",
@@ -42,10 +42,6 @@
     "@alilc/lowcode-types": "^1.0.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "http",

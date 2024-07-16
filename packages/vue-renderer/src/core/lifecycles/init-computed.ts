@@ -1,4 +1,4 @@
-import { isFunction, isPlainObject, noop } from '@knxcloud/lowcode-utils';
+import { isFunction, isPlainObject, noop } from '@castle/lowcode-utils';
 import { computed, type ComputedOptions } from 'vue';
 import {
   AccessTypes,

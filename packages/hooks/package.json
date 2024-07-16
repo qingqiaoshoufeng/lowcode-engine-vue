@@ -1,5 +1,5 @@
 {
-  "name": "@knxcloud/lowcode-hooks",
+  "name": "@castle/lowcode-hooks",
   "version": "1.6.0",
   "main": "dist/lowcode-hooks.js",
   "module": "dist/lowcode-hooks.mjs",
@@ -27,10 +27,6 @@
   "peerDependencies": {
     "@alilc/lowcode-types": "^1.0.0",
     "vue": "^3.0.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "http",

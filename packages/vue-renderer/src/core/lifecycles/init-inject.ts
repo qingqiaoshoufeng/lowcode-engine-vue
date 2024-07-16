@@ -1,4 +1,4 @@
-import { isArray, isObject } from '@knxcloud/lowcode-utils';
+import { isArray, isObject } from '@castle/lowcode-utils';
 import { inject, isRef, type Ref } from 'vue';
 import {
   AccessTypes,

@@ -1,4 +1,4 @@
-import { INode } from '@knxcloud/lowcode-hooks';
+import { INode } from '@castle/lowcode-hooks';
 import {
   IPublicTypeContainerSchema,
   IPublicModelDocumentModel,
@@ -6,12 +6,12 @@ import {
 } from '@alilc/lowcode-types';
 import { get } from 'lodash';
 import { createNode } from './node';
-import { isArray } from '@knxcloud/lowcode-utils';
+import { isArray } from '@castle/lowcode-utils';
 import { shallowRef } from 'vue';
 
 export function createDocument(
   schema: IPublicTypeContainerSchema,
-  metas: Record<string | number, Partial<IPublicTypeComponentMetadata>> = {}
+  metas: Record<string | number, Partial<IPublicTypeComponentMetadata>> = {},
 ): IPublicModelDocumentModel {
   const nodesMap: Record<string, INode | null> = {};
   const schemaRef = shallowRef(schema);
@@ -22,7 +22,7 @@ export function createDocument(
       for (let idx = 0; idx < node.length; idx++) {
         const createdNode = createNodeById(
           id,
-          [path, idx].filter((item) => item != null).join('.')
+          [path, idx].filter((item) => item != null).join('.'),
         );
         if (createdNode) return createdNode;
       }
@@ -34,14 +34,14 @@ export function createDocument(
         for (let idx = 0; idx < node.children.length; idx++) {
           const createdNode = createNodeById(
             id,
-            [path, 'children', idx].filter((item) => item != null).join('.')
+            [path, 'children', idx].filter((item) => item != null).join('.'),
           );
           if (createdNode) return createdNode;
         }
       } else {
         return createNodeById(
           id,
-          [path, 'children'].filter((item) => item != null).join('.')
+          [path, 'children'].filter((item) => item != null).join('.'),
         );
       }
     }

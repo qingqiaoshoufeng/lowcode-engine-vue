@@ -54,7 +54,7 @@ import {
   INode,
   getCurrentNodeKey,
   useRendererContext,
-} from '@knxcloud/lowcode-hooks';
+} from '@castle/lowcode-hooks';
 import {
   camelCase,
   isNil,
@@ -72,7 +72,7 @@ import {
   createObjectSplitter,
   isArray,
   isI18nData,
-} from '@knxcloud/lowcode-utils';
+} from '@castle/lowcode-utils';
 import { Hoc } from './leaf/hoc';
 import { Live } from './leaf/live';
 import { ensureArray, getI18n, mergeScope, AccessTypes, addToScope } from '../utils';

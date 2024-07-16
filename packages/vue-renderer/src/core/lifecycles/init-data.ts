@@ -1,4 +1,4 @@
-import { isFunction, isObject } from '@knxcloud/lowcode-utils';
+import { isFunction, isObject } from '@castle/lowcode-utils';
 import {
   AccessTypes,
   addToScope,

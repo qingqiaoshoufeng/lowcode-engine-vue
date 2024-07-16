@@ -1812,6 +1812,10 @@ describe('request handler maps', async () => {
                     a: 1,
                   },
                 },
+                dataHandler: {
+                  type: 'JSFunction',
+                  value: 'function(res) { return res.data }',
+                },
               },
             ],
           },
@@ -1875,6 +1879,10 @@ describe('request handler maps', async () => {
                   params: {
                     a: 1,
                   },
+                },
+                dataHandler: {
+                  type: 'JSFunction',
+                  value: 'function(res) { return res.data }',
                 },
               },
             ],

@@ -1,5 +1,5 @@
 import type { IPublicTypeContainerSchema } from '@alilc/lowcode-types';
-import type { INode } from '@knxcloud/lowcode-hooks';
+import type { INode } from '@castle/lowcode-hooks';
 import { mount } from '@vue/test-utils';
 import { defineComponent, renderSlot } from 'vue';
 import VueRenderer from '../src';
