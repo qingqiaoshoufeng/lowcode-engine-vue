@@ -7,7 +7,7 @@
   "scripts": {
     "start": "pnpm -C packages/vue-simulator-renderer start",
     "build": "pnpm -r build",
-    "publish": "pnpm publish -r",
+    "publishToNpm": "pnpm publish -r",
     "lint": "pnpm run lint:code && pnpm run lint:type",
     "lint:code": "eslint ./packages/**/*.ts && stylelint ./packages/**/*.less",
     "lint:type": "pnpm -r lint:type",
