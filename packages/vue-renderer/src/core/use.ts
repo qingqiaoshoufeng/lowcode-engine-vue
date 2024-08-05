@@ -33,6 +33,8 @@ import {
   onRenderTracked,
   onRenderTriggered,
   onServerPrefetch,
+  resolveDirective,
+  withDirectives,
 } from 'vue';
 import type {
   IPublicTypeNodeData as NodeData,
@@ -286,7 +288,7 @@ export function useLeaf(
     if (!loop) {
       const props = buildProps(rawProps, scope, node, null, { ref });
       const [vnodeProps, compProps] = splitProps(props);
-      return h(
+      const vnode = h(
         base,
         {
           key: vnodeProps.key ?? schema.id,
@@ -298,6 +300,15 @@ export function useLeaf(
         },
         buildSlots(rawSlots, scope, node),
       );
+
+      return compProps.withDirectivesKey
+        ? withDirectives(vnode, [
+            [
+              resolveDirective(String(compProps.withDirectivesKey)),
+              compProps.withDirectivesValue,
+            ],
+          ])
+        : vnode;
     }
 
     if (!isArray(loop)) {
@@ -310,7 +321,7 @@ export function useLeaf(
       const props = buildProps(rawProps, scope, node, blockScope, { ref });
       const [vnodeProps, compProps] = splitProps(props);
       const mergedScope = mergeScope(scope, blockScope);
-      return h(
+      const vnode = h(
         base,
         {
           key: vnodeProps.key ?? `${schema.id}--${index}`,
@@ -322,6 +333,15 @@ export function useLeaf(
         },
         buildSlots(rawSlots, mergedScope, node),
       );
+
+      return compProps.withDirectivesKey
+        ? withDirectives(vnode, [
+            [
+              resolveDirective(String(compProps.withDirectivesKey)),
+              compProps.withDirectivesValue,
+            ],
+          ])
+        : vnode;
     });
   };
 
@@ -949,7 +969,9 @@ const processProp = (target: Record<string, unknown>, key: string, val: unknown)
     }
     target[valueProp] = val;
   } else if (key.startsWith('v-')) {
-    // TODO: 指令绑定逻辑
+    // 指令绑定逻辑
+    target['withDirectivesKey'] = key;
+    target['withDirectivesValue'] = val;
   } else if (key.match(/^on[A-Z]/)) {
     // 事件绑定逻辑
 
