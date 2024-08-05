@@ -970,7 +970,7 @@ const processProp = (target: Record<string, unknown>, key: string, val: unknown)
     target[valueProp] = val;
   } else if (key.startsWith('v-')) {
     // 指令绑定逻辑
-    target['withDirectivesKey'] = key;
+    target['withDirectivesKey'] = key.replace('v-', '');
     target['withDirectivesValue'] = val;
   } else if (key.match(/^on[A-Z]/)) {
     // 事件绑定逻辑
